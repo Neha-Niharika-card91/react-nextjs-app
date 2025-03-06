@@ -3,12 +3,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PositionState {
   role: string;
-  radioValue: string;
+  radioValue: { [key: string]: string }; // Correct type for radioValue
 }
 
 const initialState: PositionState = {
   role: "",
-  radioValue: "",
+  radioValue: {}, // Corrected: empty object instead of {""}
 };
 
 const positionSlice = createSlice({
@@ -17,7 +17,10 @@ const positionSlice = createSlice({
   reducers: {
     setPosition: (
       state,
-      action: PayloadAction<{ role: string; radioValue: string }>
+      action: PayloadAction<{
+        role: string;
+        radioValue: { [key: string]: string };
+      }>
     ) => {
       state.role = action.payload.role;
       state.radioValue = action.payload.radioValue;

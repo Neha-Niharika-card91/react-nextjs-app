@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -36,7 +35,7 @@ function PersonalDetails({ onChangeDetails }: PersonalDetailsProps) {
   } = form;
 
   function onSubmit(data: FormValue) {
-    dispatch(setDetails(data)); 
+    dispatch(setDetails(data));
     console.log("Submitted", data);
   }
 
@@ -45,7 +44,7 @@ function PersonalDetails({ onChangeDetails }: PersonalDetailsProps) {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="container mt-5">
           <div className="d-flex align-items-center border p-2">
-            <label id="name" className="fw-bold me-2">
+            <label id="name" className="fw-bold fs-3 me-2">
               Name:
             </label>
             <input
@@ -65,7 +64,7 @@ function PersonalDetails({ onChangeDetails }: PersonalDetailsProps) {
             )}
           </div>
           <div className="d-flex align-items-center border p-2 mt-5">
-            <label id="phone" className="me-2 fw-bold">
+            <label id="phone" className="me-2 fs-3 fw-bold">
               Phone:
             </label>
             <input
@@ -85,8 +84,8 @@ function PersonalDetails({ onChangeDetails }: PersonalDetailsProps) {
             )}
           </div>
           <div className="d-flex align-items-center border p-3 mt-5">
-            <label className="me-2 fw-bold">
-              <p>Certification (optional)</p>
+            <label className="me-2 ">
+              <p className="fs-3 fw-bold">Certification (optional)</p>
               <input type="file" />
             </label>
             {errors.imageURL && (
@@ -94,7 +93,7 @@ function PersonalDetails({ onChangeDetails }: PersonalDetailsProps) {
             )}
           </div>
           <div className="d-flex justify-content-center mt-4">
-            <button className="btn btn-secondary" type="submit">
+            <button className="btn btn-success btn-lg" type="submit">
               Submit
             </button>
           </div>

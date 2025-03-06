@@ -13,9 +13,9 @@ function Positions({ jobTitle, position, wage }: PositionsProps) {
         width: "28rem",
       }}
     >
-      <h2 className="card-title">{jobTitle}</h2>
-      <h4 className="card-subtitle">{position}</h4>
-      <p className="card-text">
+      <h2 className="card-title fs-4">{jobTitle}</h2>
+      <h4 className="card-subtitle fs-5">{position}</h4>
+      <p className="card-text fs-6">
         <Wallet size={20} />
         {wage}
       </p>

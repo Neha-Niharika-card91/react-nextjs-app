@@ -40,44 +40,56 @@ export default function JobLocation({ onChangeLocation }: JobLocationProps) {
             onSubmit={handleSubmit(() => console.log("Form submitted"))}
             noValidate
           >
-            <label id="location" className="me-2 fw-bold">
-              Location
+            <div className="d-flex flex-row align-items-center">
+              <label id="location" className="me-2 fw-bold fs-3">
+                Location
+              </label>
               <input
                 type="text"
                 placeholder="city, area..."
                 onChange={onInputChange}
-                className="form-control border-0"
+                className="form-control border-0 w-50 m-2"
                 value={location}
               />
-            </label>
-            <h3>Suggestions</h3>
-            <label>
-              <input
-                type="radio"
-                value="HSR"
-                onChange={onRadioChange}
-                checked={radioValue === "HSR"}
-              />
-              HSR
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="JP Nagar"
-                onChange={onRadioChange}
-                checked={radioValue === "JP Nagar"}
-              />
-              JP Nagar
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="BTM"
-                onChange={onRadioChange}
-                checked={radioValue === "BTM"}
-              />
-              BTM
-            </label>
+            </div>
+            {location.length === 0 && (
+              <div>
+                <label className="fs-6">Suggestions</label>
+                <div className="d-flex flex-row vw-100">
+                  <label className="btn btn-outline-secondary h-25 d-inline-block w-25 p-2 m-2">
+                    <input
+                      type="radio"
+                      value="HSR"
+                      className="btn-check"
+                      onChange={onRadioChange}
+                      checked={radioValue === "HSR"}
+                    />
+                    HSR
+                  </label>
+
+                  <label className="btn btn-outline-secondary h-25 d-inline-block w-25 p-2 m-2">
+                    <input
+                      type="radio"
+                      value="JP Nagar"
+                      className="btn-check"
+                      onChange={onRadioChange}
+                      checked={radioValue === "JP Nagar"}
+                    />
+                    JP Nagar
+                  </label>
+                  <label className="btn btn-outline-secondary h-25 d-inline-block w-25 p-2 m-2">
+                    <input
+                      type="radio"
+                      value="BTM"
+                      className="btn-check"
+                      onChange={onRadioChange}
+                      checked={radioValue === "BTM"}
+                    />
+                    BTM
+                  </label>
+                </div>
+              </div>
+            )}
           </form>
         </div>
       </div>

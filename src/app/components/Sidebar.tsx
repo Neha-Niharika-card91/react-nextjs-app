@@ -6,6 +6,7 @@ import { Home, User, HelpCircle, List, CheckCircle } from "lucide-react";
 
 const Sidebar = () => {
   const [isVisible, setVisible] = useState(false);
+  const [isActive, setActive] = useState("");
 
   const items = [
     { name: "Home", path: "/", icon: <Home size={20} /> },
@@ -54,6 +55,13 @@ const Sidebar = () => {
             key={item.name}
             href={item.path}
             className="d-flex align-items-center text-white text-decoration-none py-2 px-3 rounded"
+            style={{
+              backgroundColor:
+                isActive === item.path ? "orange" : "transparent", // Highlight active link
+              fontWeight: isActive === item.path ? "bold" : "normal",
+              color: isActive === item.path ? "black" : "white",
+            }}
+            onClick={() => setActive(item.path)}
           >
             {item.icon}
             {isVisible && <span>{item.name}</span>}
